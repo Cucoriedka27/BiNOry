@@ -47,9 +47,6 @@ Pops the top 2 values, adds them together and add the result on the stack.
 - -4
   Pops the top value off the stack and jumps the amount of lines forward as the value (any non 1 or 0 character get ignored so if there's some text of a new line it acts like there's nothing there).
 
-
-## Optional 0 Opcode(s) that you don't really need to add to your interpreter/compiler but are still good for some uses
-
 - -5
   Adds the amount of values on the stack to the stack.
 
