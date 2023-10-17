@@ -53,7 +53,14 @@ Pops the top 2 values, adds them together and add the result on the stack.
 - -5
   Adds the amount of values on the stack to the stack.
 
+## Tape Commands
+- 1
+  Pops the value from the stack and stores it on the location in the tape
+  
+- 2
+  Pushes a value on the location in the tape to the stack
 
+- other (wip)
 
 ## Examples
 
