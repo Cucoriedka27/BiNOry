@@ -2,7 +2,7 @@
 Esoteric programming language that looks like binary but doesn't function like it.
 
 - Idea by Čučoriedka
-- First interpreter/some ideas by ttmso
+- First interpreter in lua/some ideas by ttmso
 
 
 
