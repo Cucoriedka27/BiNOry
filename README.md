@@ -33,9 +33,7 @@ Esoteric programming language that looks like binary but doesn't function like i
   Duplicates the top value on the stack.
 
 - 4
-  first argument: the command to execute
-  second argument: position on the tape
-  third argument (when putting into the tape): number to store
+  pops a value and executes a command based on a tape command table
 
 - -1
   Pops a value and rotates that many values on the stack down (if the value is negative it will rotate the bottom values of the stack direction and if its zero nothing will happen).
@@ -56,10 +54,10 @@ Esoteric programming language that looks like binary but doesn't function like i
 ## Tape Commands
 
 - 1
-  Pops the value from the stack and stores it on the location in the tape
+  Pops 2 values the second value popped is stored in the tape on the location specified by the first value
   
 - 2
-  Pushes a value on the location in the tape to the stack
+  Pops a value and pushes a value on that location on the tape
 
 - other (probably not)
 
