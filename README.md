@@ -21,10 +21,10 @@ Esoteric programming language that looks like binary but doesn't function like i
 ## 0 Opcode's
 
 - 0
-Pops the top value and does nothing.
+  Pops the top value and does nothing.
 
 - 1
-Pops the top 2 values, adds them together and add the result on the stack.
+  Pops the top 2 values, adds them together and add the result on the stack.
 
 - 2
   Negates the top value on the stack.
@@ -33,7 +33,9 @@ Pops the top 2 values, adds them together and add the result on the stack.
   Duplicates the top value on the stack.
 
 - 4
-  (wip but will be an array/tape command)
+  first argument: the command to execute
+  second argument: position on the tape
+  third argument (when putting into the tape): number to store
 
 - -1
   Pops a value and rotates that many values on the stack down (if the value is negative it will rotate the bottom values of the stack direction and if its zero nothing will happen).
@@ -59,7 +61,7 @@ Pops the top 2 values, adds them together and add the result on the stack.
 - 2
   Pushes a value on the location in the tape to the stack
 
-- other (wip)
+- other (probably not)
 
 
 ## Examples
