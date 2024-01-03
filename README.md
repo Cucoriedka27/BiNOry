@@ -45,7 +45,7 @@ Esoteric programming language that looks like binary but doesn't function like i
   Gets input from the user, adds 0 to the stack and adds the input characters in reverse (last character above the 0) to the stack.
 
 - -4
-  Pops the top value off the stack and jumps the amount of lines forward as the value (any non 1 or 0 character get ignored so if there's some text of a new line it acts like there's nothing there).
+  Pops the top value off the stack and jumps the amount of lines forward as the value.
 
 - -5
   Adds the amount of values on the stack to the stack.
