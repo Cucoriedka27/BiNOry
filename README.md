@@ -33,7 +33,7 @@ Esoteric programming language that looks like binary but doesn't function like i
   Duplicates the top value on the stack.
 
 - 4
-  pops a value and executes a command based on a tape command table
+  Pops a value and executes a command based on a tape command table
 
 - -1
   Pops a value and rotates that many values on the stack down (if the value is negative it will rotate the bottom values of the stack direction and if its zero nothing will happen).
@@ -45,7 +45,7 @@ Esoteric programming language that looks like binary but doesn't function like i
   Gets input from the user, adds 0 to the stack and adds the input characters in reverse (last character above the 0) to the stack.
 
 - -4
-  Pops the top value off the stack and jumps the amount of lines forward as the value.
+  Pops the top value off the stack and jumps the amount of opcodes forward as the value.
 
 - -5
   Adds the amount of values on the stack to the stack.
