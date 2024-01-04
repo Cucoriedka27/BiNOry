@@ -36,7 +36,7 @@ Esoteric programming language that looks like binary but doesn't function like i
   Pops a value and executes a command based on a tape command table
 
 - -1
-  Pops a value and rotates that many values on the stack down (if the value is negative it will rotate the bottom values of the stack direction and if its zero nothing will happen).
+  Pops a value and rotates that many values on the stack down (if the value is negative it will rotate the bottom values of the stack up and if its zero nothing will happen).
 
 - -2
   Pops and outputs the top value on the stack as an ascii character.
