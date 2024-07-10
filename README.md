@@ -5,61 +5,57 @@ Esoteric programming language that looks like binary but doesn't function like i
 - First interpreter in lua/some ideas by ttmso
 
 
+## Commands
 
-## Opcodes
-
-- 1
+- `1`
   Adds 1 to the stack.
 
-- 0
+- `0`
   Pops the top value and does an "0 opcode" depending on the value.
 
 - Anything else gets ignored.
 
 
+## Opcodes
 
-## 0 Opcode's
+- `0`
+  Pops the top value.
 
-- 0
-  Pops the top value and does nothing.
+- `1`
+  Pops the top 2 values, adds them together and pushes the result back on the stack.
 
-- 1
-  Pops the top 2 values, adds them together and add the result on the stack.
-
-- 2
+- `2`
   Negates the top value on the stack.
 
-- 3
+- `3`
   Duplicates the top value on the stack.
 
-- 4
+- `4`
   Pops a value and executes a command based on a tape command table
 
-- -1
-  Pops a value and rotates that many values on the stack down (if the value is negative it will rotate the bottom values of the stack up and if its zero nothing will happen).
+- `-1`
+  Pops a value and rotates that many values on the stack down (if the value is negative it will rotate the bottom values of the stack up and if its zero nothing will happen), e.g. a stack of `1 2 3 4 5` (the right is the top) with a rotation of 3 will be `1 2 4 5 3` or if the rotation is -3 `3 1 2 4 5`
 
-- -2
+- `-2`
   Pops and outputs the top value on the stack as an ascii character.
 
-- -3
-  Gets input from the user, adds 0 to the stack and adds the input characters in reverse (last character above the 0) to the stack.
+- `-3`
+  Gets input from the user, pushes 0 to the stack and adds the input characters in reverse (last character above the 0) to the stack.
 
-- -4
-  Pops the top value off the stack and jumps the amount of opcodes forward as the value. (clamps pointer between the start and the end of the code)
+- `-4`
+  Pops the top value off the stack and jumps the amount of characters forward as the value (clamps pointer between the start and the end of the code).
 
-- -5
-  Adds the amount of values on the stack to the stack.
+- `-5`
+  Pushes the amount of values on the stack to the stack.
 
 
 ## Tape Commands
 
-- 1
+- `1`
   Pops 2 values the second value popped is stored in the tape on the location specified by the first value
   
-- 2
+- `2`
   Pops a value and pushes a value on that location on the tape
-
-- other (probably not)
 
 
 ## Examples
@@ -83,4 +79,4 @@ Esoteric programming language that looks like binary but doesn't function like i
   `1110 1111010010 1111010010 1111010010 1111010010 1111010010 1110 1111010010 1111010010 10 11110100 1110 11100 0 1110 1111010010 1111010010 1111010010 1111010010 10 1111010 11100 10 11110100 1110 11100 0 1110 1111010010 1111010010 1 11100 1010 11110100 11110100 1110 11100 0 1110 11100 0 1111010 10 11110100 1110 11100 0 1110 1111010010 1111010010 1111010010 1111010010 1110 1111010010 1111010010 10 1111101010 10 1110111000 1110 1111010010 1111010010 1111010010 1111010010 1110111000 1110 1111010010 1111010010 1111010010 1111010010 1111010010 1110 1111010010 1111010010 1111010010 10 1110 1111010010 1111010010 111100 1010 1110111000 1111010 0 1110111000 1111010 10 11110100 1110111000 1110 1111010010 111010 11100 10 11110100 1110111000 1110 1111010010 1111010010 11100 10 1110111000 1110 1111010010 1111010010 1111010010 1111010010 110 1110111000`
 
 - Add only caluculator with 1 digit input/output
-`1110 1111010010 1111010010 1111010010 1111010010 1110 1111010010 1111010010 1110 1111010010 1111010010 10 10 11110100 11100 11110100 1111010111000 10 10 1110 1111000 1111010111000 10 10 10 10 1110111000`
+  `1110 1111010010 1111010010 1111010010 1111010010 1110 1111010010 1111010010 1110 1111010010 1111010010 10 10 11110100 11100 11110100 1111010111000 10 10 1110 1111000 1111010111000 10 10 10 10 1110111000`
