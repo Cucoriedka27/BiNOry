@@ -11,7 +11,7 @@ Esoteric programming language that looks like binary but doesn't function like i
   Adds 1 to the stack.
 
 - `0`
-  Pops the top value and does an "0 opcode" depending on the value.
+  Pops the top value and does an opcode depending on the value.
 
 - Anything else gets ignored.
 
@@ -31,10 +31,19 @@ Esoteric programming language that looks like binary but doesn't function like i
   Duplicates the top value on the stack.
 
 - `4`
-  Pops a value and executes a command based on a tape command table
+  Pops a value and executes one of these commands depending on the value:
+  
+  - `1`
+    Pops 2 values the second value popped is stored in the tape on the location specified by the first value.
+  
+  - `2`
+    Pops a value and pushes a value on that location on the tape.
+  
+  - `-1`
+    Pops 2 values and and swaps the values in the tape at those addresses.
 
 - `-1`
-  Pops a value and rotates that many values on the stack down (if the value is negative it will rotate the bottom values of the stack up and if its zero nothing will happen), e.g. a stack of `1 2 3 4 5` (the right is the top) with a rotation of 3 will be `1 2 4 5 3` or if the rotation is -3 `3 1 2 4 5`
+  Pops a value and rotates that many values on the stack down (if the value is negative it will rotate the bottom values of the stack up and if its zero nothing will happen), e.g. a stack of `1 2 3 4 5` (the right is the top) with a rotation of 3 will be `1 2 4 5 3` or if the rotation is -3 `3 1 2 4 5`.
 
 - `-2`
   Pops and outputs the top value on the stack as an ascii character.
@@ -49,18 +58,9 @@ Esoteric programming language that looks like binary but doesn't function like i
   Pushes the amount of values on the stack to the stack.
 
 
-## Tape Commands
-
-- `1`
-  Pops 2 values the second value popped is stored in the tape on the location specified by the first value
-  
-- `2`
-  Pops a value and pushes a value on that location on the tape
-
-
 ## Examples
 
-- Add 0 to the stack
+- Add 0 to the stack.
   `1 1 11100 10`
 
 - Hello World v1 "H"
