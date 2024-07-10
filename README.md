@@ -38,9 +38,6 @@ Esoteric programming language that looks like binary but doesn't function like i
   
   - `2`
     Pops a value and pushes a value on that location on the tape.
-  
-  - `-1`
-    Pops 2 values and and swaps the values in the tape at those addresses.
 
 - `-1`
   Pops a value and rotates that many values on the stack down (if the value is negative it will rotate the bottom values of the stack up and if its zero nothing will happen), e.g. a stack of `1 2 3 4 5` (the right is the top) with a rotation of 3 will be `1 2 4 5 3` or if the rotation is -3 `3 1 2 4 5`.
@@ -80,3 +77,8 @@ Esoteric programming language that looks like binary but doesn't function like i
 
 - Add only caluculator with 1 digit input/output
   `1110 1111010010 1111010010 1111010010 1111010010 1110 1111010010 1111010010 1110 1111010010 1111010010 10 10 11110100 11100 11110100 1111010111000 10 10 1110 1111000 1111010111000 10 10 10 10 1110111000`
+
+
+# AsmNOry
+
+A simple asmbly like language for cross compilation to BiNOry
