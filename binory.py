@@ -38,12 +38,14 @@ def run_code(code: str):
                     stack.append(stack[-1])
                     code_pointer += 1
                 case -2:
+                    if len(stack) < 1:
+                        print(f"Too little values on stack for opcode {opcode}")
+                        return
                     print(chr(stack.pop()), end="")
                     code_pointer += 1
                 case _:
                     print(f"Unknown opcode {opcode}")
                     return
-    print(stack)
 
 
 if __name__ == "__main__":
