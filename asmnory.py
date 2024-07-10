@@ -71,5 +71,11 @@ def get_num(num: int):
 # Compile AsmNOry.
 # file_name should not contain the extension.
 def compile_asmnory(file_name: str):
+    print("Compileing AsmNOry")
     input_file_name = file_name + ".ano"
     output_file_name = file_name + ".bno"
+    print("Done")
+
+
+if __name__ == "__main__":
+    compile_asmnory(input("Name (no extension): "))
