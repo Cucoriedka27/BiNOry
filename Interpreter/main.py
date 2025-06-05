@@ -11,13 +11,21 @@ class InStream:
         return char, has_more
 
 def rotate(stack, n):
-    return stack
+    if n == 0:
+        return stack
+    if n > 0:
+        value = stack.pop(len(stack) - n)
+        stack.append(value)
+        return stack
+    if n < 0:
+        stack.insert(len(stack) + n, stack.pop())
+        return stack
 
 def main():
     debug = True
-    code = "1110+"
+    code = ""
     ip = 0
-    stack = []
+    stack = [1 ,2 ,3 ,4 ,5 , -3, -1]
     instream = InStream()
 
     while True:
@@ -46,7 +54,8 @@ def main():
                     case 4: 
                         stack.appent(len(stack))
                     case -1:
-                        stack = rotate(stack, stack.pop())
+                        value = stack.pop()
+                        stack = rotate(stack, value)
                     case -2:
                         print(chr(stack.pop))
                     case -3:
