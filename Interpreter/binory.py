@@ -36,8 +36,9 @@ def main():
     with open(arguments[0], "r") as f:
         code = f.read()
     
-    if arguments[1] == "True":
-        debug = True
+    if len(arguments == 2):
+        if arguments[1] == "True":
+            debug = True
 
     ip = 0
     stack = []
