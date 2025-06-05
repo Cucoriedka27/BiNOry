@@ -28,9 +28,14 @@ def main():
     code = ""
     arguments = sys.argv
     arguments.pop(0)
-    if len(arguments == 0):
+
+    if len(arguments) == 0:
         print("Usage: python binory.py filepath.bino")
         return
+    
+    with open(arguments[0], "r") as f:
+        code = f.read()
+    
     ip = 0
     stack = []
     instream = InStream()
@@ -53,18 +58,18 @@ def main():
                     case 1:
                         stack.append(stack.pop() + stack.pop())
                     case 2:
-                        stack.appent(-stack.pop())
+                        stack.append(-stack.pop())
                     case 3: 
                         value = stack.pop()
                         stack.append(value)
                         stack.append(value)
                     case 4: 
-                        stack.appent(len(stack))
+                        stack.append(len(stack))
                     case -1:
                         value = stack.pop()
                         stack = rotate(stack, value)
                     case -2:
-                        print(chr(stack.pop))
+                        print(chr(stack.pop()), end="")
                     case -3:
                         char, has_more = instream.next_char()
                         stack.append(char)
