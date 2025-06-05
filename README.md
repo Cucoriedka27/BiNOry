@@ -14,7 +14,7 @@ BiNory is a stack based language that only uses the characters `1` and `0`.
 - `0` Pops the top value on the stack and does an operation based on the following opcode table, if the opcode is incorrect then 
 
 |opcode|description|
-|------|-----------|
+|:----:|-----------|
 |`0`| Pops the top value |
 |`1`| Pops the top 2 values, adds them together, and pushes the result onto the stack |
 |`2`| Pops the top value, and pushes its negative |
