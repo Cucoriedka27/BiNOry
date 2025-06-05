@@ -24,18 +24,21 @@ def rotate(stack, n):
         return stack
 
 def main():
-    debug = True
+    debug = False
     code = ""
     arguments = sys.argv
     arguments.pop(0)
 
     if len(arguments) == 0:
-        print("Usage: python binory.py filepath.bino")
+        print("Usage: python binory.py filepath.bino [debug: True/False]")
         return
     
     with open(arguments[0], "r") as f:
         code = f.read()
     
+    if arguments[1] == "True":
+        debug = True
+
     ip = 0
     stack = []
     instream = InStream()
