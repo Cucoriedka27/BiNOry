@@ -1,3 +1,5 @@
+import sys
+
 class InStream:
     def __init__(self):
         self.buffer = ""
@@ -24,8 +26,13 @@ def rotate(stack, n):
 def main():
     debug = True
     code = ""
+    arguments = sys.argv
+    arguments.pop(0)
+    if len(arguments == 0):
+        print("Usage: python binory.py filepath.bino")
+        return
     ip = 0
-    stack = [1 ,2 ,3 ,4 ,5 , -3, -1]
+    stack = []
     instream = InStream()
 
     while True:
