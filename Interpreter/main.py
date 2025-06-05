@@ -14,6 +14,7 @@ def rotate(stack, n):
     return stack
 
 def main():
+    debug = True
     code = "1110+"
     ip = 0
     stack = []
@@ -24,10 +25,11 @@ def main():
             break
 
         match code[ip]:
+            case '+':
+                if debug:
+                    print(stack)
             case '1': 
                 stack.append(1)
-            case '+':
-                print(stack)
             case '0':
                 op = stack.pop()
                 match op:
