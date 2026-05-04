@@ -1,4 +1,5 @@
 import sys
+import random
 
 class InStream:
     def __init__(self):
@@ -16,11 +17,17 @@ def rotate(stack, n):
     if n == 0:
         return stack
     if n > 0:
-        value = stack.pop(len(stack) - n)
-        stack.append(value)
+        if len(stack) - n < 0:
+            stack.append(random.randint(0, 1))
+        else:
+            value = stack.pop(len(stack) - n)
+            stack.append(value)
         return stack
     if n < 0:
-        stack.insert(len(stack) + n, stack.pop())
+        if len(stack) + n < 0:
+            stack.pop()
+        else:
+            stack.insert(len(stack) + n, stack.pop())
         return stack
 
 def main():
