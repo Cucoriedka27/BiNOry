@@ -4,7 +4,7 @@ BiNory is an esoteric programming language or esolang for short. It's intention 
 
 - Idea by Čučoriedka
 - Interpreter in python by Čučoriedka
-- First assembler in python by purpletissuebox [Assembler repo](https://codeberg.org/purpletissuebox/binory-assembler)
+- First assembler in python by [purpletissuebox](https://codeberg.org/purpletissuebox): [Assembler repo](https://codeberg.org/purpletissuebox/binory-assembler)
 
 ## Definition
 BiNory is a stack based language that only uses the characters `1` and `0`.
