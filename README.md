@@ -10,6 +10,7 @@ BiNory is an esoteric programming language or esolang for short. It's intention 
 BiNory is a stack based language that only uses the characters `1` and `0`.
 
 - out of range indexes are refered to as void
+- if the void is read it gives a random value, if a value is put into the void it deletes the value
 
 ### Instructions
 
@@ -23,7 +24,7 @@ BiNory is a stack based language that only uses the characters `1` and `0`.
 |`2`|Negate|Pops the top value, and pushes its negative|
 |`3`|Duplicate|Pops the top value, and pushes the same value onto the stack twice|
 |`4`|Count|Pushes the ammount of values on the stack|
-|`-1`|Rotate|Pops the top value, and rotates the top n values (where n is the positive of the value popped) down if positive, or up if negative (eg. `5 4 3 2 1` if rotated by `3` will become ` 5 4 2 1 3` and with `-3` will become `5 4 1 3 2`), if a value from the void is taken it gives a random value, if it's put there it's permanently removed|
+|`-1`|Rotate|Pops the top value, and rotates the top n values (where n is the positive of the value popped) down if positive, or up if negative (eg. `5 4 3 2 1` if rotated by `3` will become ` 5 4 2 1 3` and with `-3` will become `5 4 1 3 2`)|
 |`-2`|Ouput|Pops the top value, and outputs it as an ASCII character|
 |`-3`|Input|Pushes 1 value from the input stream of the console  as an ascii character, and a `1` if there is another value or `0` if there isn't|
 |`-4`|Jump|Pops the top value, and jumps that ammount of instructions forward (clamps the pointer between the start and end of the code)|

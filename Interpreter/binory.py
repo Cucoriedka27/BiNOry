@@ -12,6 +12,12 @@ class InStream:
         char = self.buffer.pop(0)
         has_more = 1 if self.buffer else 0
         return char, has_more
+    
+def safePop(stack, n=None):
+    try: 
+        return stack.pop(n)
+    except IndexError:
+        return random.randint(0, 1)
 
 def rotate(stack, n):
     if n == 0:
@@ -20,15 +26,16 @@ def rotate(stack, n):
         if len(stack) - n < 0:
             stack.append(random.randint(0, 1))
         else:
-            value = stack.pop(len(stack) - n)
+            value = safePop(stack, len(stack) - n)
             stack.append(value)
         return stack
     if n < 0:
         if len(stack) + n < 0:
-            stack.pop()
+            safePop(stack)
         else:
-            stack.insert(len(stack) + n, stack.pop())
+            stack.insert(len(stack) + n, safePop(stack))
         return stack
+
 
 def main():
     debug = False
@@ -67,31 +74,31 @@ def main():
             case '1': 
                 stack.append(1)
             case '0':
-                op = stack.pop()
+                op = safePop(stack)
                 match op:
                     case 0:
-                        stack.pop()
+                        safePop(stack)
                     case 1:
-                        stack.append(stack.pop() + stack.pop())
+                        stack.append(safePop(stack) + safePop(stack))
                     case 2:
-                        stack.append(-stack.pop())
+                        stack.append(-safePop(stack))
                     case 3: 
-                        value = stack.pop()
+                        value = safePop(stack)
                         stack.append(value)
                         stack.append(value)
                     case 4: 
                         stack.append(len(stack))
                     case -1:
-                        value = stack.pop()
+                        value = safePop(stack)
                         stack = rotate(stack, value)
                     case -2:
-                        print(chr(stack.pop()), end="")
+                        print(chr(safePop(stack)), end="")
                     case -3:
                         char, has_more = instream.next_char()
                         stack.append(ord(char))
                         stack.append(has_more)
                     case -4:
-                        ip += stack.pop() - 1
+                        ip += safePop(stack) - 1
         ip += 1
 
 if __name__ == "__main__":
