@@ -81,7 +81,7 @@ def main():
                         print(chr(stack.pop()), end="")
                     case -3:
                         char, has_more = instream.next_char()
-                        stack.append(char)
+                        stack.append(ord(char))
                         stack.append(has_more)
                     case -4:
                         ip += stack.pop() - 1
