@@ -23,17 +23,11 @@ def rotate(stack, n):
     if n == 0:
         return stack
     if n > 0:
-        if len(stack) - n < 0:
-            stack.append(random.randint(0, 1))
-        else:
-            value = safePop(stack, len(stack) - n)
-            stack.append(value)
+        value = safePop(stack, len(stack) - n)
+        stack.append(value)
         return stack
     if n < 0:
-        if len(stack) + n < 0:
-            safePop(stack)
-        else:
-            stack.insert(len(stack) + n, safePop(stack))
+        stack.insert(len(stack) + n, safePop(stack))
         return stack
 
 
